@@ -1,0 +1,31 @@
+[package]
+name = "bits-agent"
+version = "0.1.0"
+authors = ["Adam Gashlin <agashlin@mozilla.com>"]
+
+[dependencies]
+byteorder = "1.2.1"
+error-chain = { version = "0.11.0", default-features = false }
+widestring = "0.3.0"
+winapi = { version = "0.3.5", features = ["aclapi",
+                                          "bits",
+                                          "combaseapi",
+                                          "errhandlingapi",
+                                          "fileapi",
+                                          "guiddef",
+                                          "handleapi",
+                                          "lmcons",
+                                          "minwinbase",
+                                          "minwindef",
+                                          "namedpipeapi",
+                                          "objbase",
+                                          "securitybaseapi",
+                                          "winbase", 
+                                          "winerror",
+                                          "winnt",
+                                          "winsvc",
+                                          "wtypesbase"] }
+windows-service = { version = "0.1.0", default-features = false }
+
+[patch.crates-io]
+windows-service = { path = "windows-service-rs" }
